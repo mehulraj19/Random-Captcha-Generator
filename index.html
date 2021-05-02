@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Captcha Generator</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+</head>
+<style>
+    body{
+        margin: 100px;
+        font-size: large;
+        background-color: rgba(196, 71, 196, 0.856);
+        font-family: 'Noto Sans JP', sans-serif;
+    }
+    h1{
+        color: white;
+    }
+    p{  
+        background-color: turquoise;
+        font-size: 25px;
+    }
+    form{
+        font-size: 22px;
+    }
+    form [type='text']{
+        font-size: 25px;
+    }
+    form [type='button']{
+        font-size: 18px;
+    }
+    .box-main{
+        background-color: rgba(96, 138, 194, 0.479);
+        z-index: 2;
+        color: white;
+        width: 600px;
+        height: 350px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        text-align: center;
+    }
+</style>
+<body>
+    <center>
+        <h1>Random Captcha Generator</h1>
+        <br><br><br>
+
+        <div class="box-main">
+            <br><br>
+            <p id="RandomValue"></p>
+            <br>
+            <form>
+                <b><u> Enter Captcha</u>: </b><span> </span> 
+                <input type="text" id="captcha" placeholder="Enter Captcha">
+                <br><br>
+                <input type="button" value="Submit" onclick="validCaptcha()">
+            </form>
+        </div>
+    </center>
+    <script>
+        var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const n = str.length+1;
+        var out = "";
+        str += "102";
+        for(var i=0; i<6; i++) {
+            var k = Math.floor(Math.random() * n);
+            out += str.charAt(k);
+        }
+        document.getElementById("RandomValue").innerHTML = out;
+
+        function validCaptcha() {
+            var captcha = document.getElementById("captcha").value;
+            var mainCaptcha = out;
+            if(captcha === mainCaptcha) {
+                alert("Captcha entered is correct!!");
+            } else{
+                alert("Captcha entered is incorrect!!");
+            }
+        }
+    </script>
+</body>
+</html>
