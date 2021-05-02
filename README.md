@@ -12,4 +12,4 @@ Functions used:
   <li>Styling of the page has been done using Custom-CSS</li>
 </ul>
 <br>
-Try this webiste by <a href="https://mehulraj19.github.io/Random-Captcha-Generator/" target="_blank">clicking here.</a> 
+Try this webiste by <a href="https://mehulraj19.github.io/Random-Captcha-Generator/" target="_blank" >clicking here.</a> 
